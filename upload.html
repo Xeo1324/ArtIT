@@ -1,0 +1,34 @@
+<!-- upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Art - ArtIT</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo"><a href="index.html">ArtIT</a></h1>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="products.html">Buy Artifacts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h2>Upload Your Artwork</h2>
+    <form id="uploadForm">
+      <input type="text" id="title" placeholder="Title of Artwork" required />
+      <input type="number" id="price" placeholder="Price in INR" required />
+      <input type="text" id="upi" placeholder="Your UPI ID" required />
+      <input type="file" id="image" accept="image/*" required />
+      <button type="submit">Upload</button>
+    </form>
+  </div>
+
+  <script src="js/upload.js"></script>
+</body>
+</html>

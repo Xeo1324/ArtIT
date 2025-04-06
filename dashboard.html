@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - ArtIT</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo"><a href="index.html">ArtIT</a></h1>
+    <nav>
+      <ul>
+        <li><a href="upload.html">Upload Artwork</a></li>
+        <li><a href="products.html">Buy Artifacts</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="dashboard">
+    <h2>Welcome, <span id="username">Artisan</span>!</h2>
+    <div class="stats">
+      <p><strong>Total Artworks Uploaded:</strong> <span id="artCount">0</span></p>
+      <p><strong>Total Earnings:</strong> ₹<span id="earnings">0</span></p>
+      <p><strong>Your UPI ID:</strong> <span id="upiId">Loading...</span></p>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("username").innerText = localStorage.getItem("name") || "Artisan";
+    document.getElementById("artCount").innerText = Math.floor(Math.random() * 15 + 1);
+    document.getElementById("earnings").innerText = Math.floor(Math.random() * 1000 + 500);
+    document.getElementById("upiId").innerText = localStorage.getItem("upi") || "Not set";
+    
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
