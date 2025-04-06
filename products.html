@@ -1,9 +1,9 @@
-<!-- products.html -->
+<!-- Updated products.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buy Artifacts - ArtIT</title>
   <link rel="stylesheet" href="styles/style.css" />
 </head>
@@ -12,19 +12,21 @@
     <h1 class="logo"><a href="index.html">ArtIT</a></h1>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="upload.html">Sell Your Art</a></li>
+        <li><a href="products.html" class="active">Buy Artifacts</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="product-gallery">
-    <h2>Explore Artworks</h2>
-    <div id="productContainer" class="product-list">
-      <!-- Artworks will load here -->
-    </div>
-  </section>
+  <main class="products">
+    <h2>Buy Beautiful Artifacts</h2>
+    <div id="product-list" class="grid"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ArtIT. All rights reserved.</p>
+  </footer>
 
   <script src="js/products.js"></script>
 </body>
