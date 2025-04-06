@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Upload Art - ArtIT</title>
+  <title>Upload Artwork - ArtIT</title>
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
@@ -12,23 +12,35 @@
     <h1 class="logo"><a href="index.html">ArtIT</a></h1>
     <nav>
       <ul>
-        <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="products.html">Buy Artifacts</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="form-container">
+  <section>
     <h2>Upload Your Artwork</h2>
-    <form id="uploadForm">
-      <input type="text" id="title" placeholder="Title of Artwork" required />
-      <input type="number" id="price" placeholder="Price in INR" required />
-      <input type="text" id="upi" placeholder="Your UPI ID" required />
-      <input type="file" id="image" accept="image/*" required />
-      <button type="submit">Upload</button>
+    <form id="uploadForm" class="fade-in">
+      <input type="text" id="title" placeholder="Artwork Title" required />
+      <textarea id="description" rows="3" placeholder="Short Description" required></textarea>
+      <input type="text" id="upiId" placeholder="Your UPI ID (e.g., abc@oksbi)" required />
+      <input type="file" id="imageFile" accept="image/*" required />
+      <button type="submit">Upload Artwork</button>
     </form>
-  </div>
+  </section>
 
+  <footer>
+    <p>© 2025 ArtIT | Empowering Local Artists</p>
+  </footer>
+
+  <script src="js/firebase.js"></script>
   <script src="js/upload.js"></script>
+  <script>
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
 </body>
 </html>
