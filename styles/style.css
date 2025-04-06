@@ -1,181 +1,170 @@
-/* styles/style.css */
+/* style.css */
+
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
-    color: #333;
-    transition: background 0.4s ease;
+  background: linear-gradient(to bottom right, #fff5f7, #e0f7ff);
+  color: #333;
+  transition: background 0.5s ease-in-out;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4b0082;
+  padding: 1rem 2rem;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffb6c1;
+  transform: scale(1.1);
+}
+
+section {
+  padding: 4rem 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4b0082;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card .info {
+  padding: 1rem;
+}
+
+.product-card .info h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.product-card .info p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.product-card .info .price {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #4b0082;
+}
+
+button {
+  background-color: #4b0082;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #6a0dad;
+}
+
+/* Contact Form Styling */
+form input,
+form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form button {
+  margin-top: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
   header {
-    background: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .logo a {
-    text-decoration: none;
-    font-size: 1.8rem;
-    color: #6c63ff;
-    font-weight: bold;
-  }
-  
+
   nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
   }
-  
-  nav ul li a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #333;
+
+  .product-card img {
+    height: 150px;
   }
-  
-  nav ul li a:hover {
-    color: #6c63ff;
-  }
-  
-  .intro {
-    padding: 3rem;/* styles/style.css */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #fff3f3, #e6f2ff);
-      color: #333;
-      transition: background 0.5s ease;
-    }
-    
-    header {
-      background: linear-gradient(to right, #ff4b2b, #ff416c);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-    
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.2rem;
-    }
-    
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-    }
-    
-    nav a::after {
-      content: '';
-      display: block;
-      height: 2px;
-      width: 0%;
-      background: white;
-      transition: 0.3s;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-    }
-    
-    nav a:hover::after {
-      width: 100%;
-    }
-    
-    section {
-      padding: 2rem;
-    }
-    
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-    
-    .product-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-    
-    .product-card {
-      background: white;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .product-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
-    
-    .product-card img {
-      max-width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
-    
-    button {
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 25px;
-      background: linear-gradient(45deg, #007bff, #00d4ff);
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    
-    button:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-    }
-    
-    .dashboard .stats {
-      margin: 2rem auto;
-      max-width: 600px;
-      background: #fefefe;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    
-    .dashboard .stats p {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
-    }
-    
-    border-radius: 20px;
-    margin: 2rem;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
-  }
-  
-  .intro h2 {
-    color: #5e60ce;
-  }
-  
-  .intro p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-  
+}
