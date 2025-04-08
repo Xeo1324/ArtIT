@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArtIT - Home</title>
-  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #f5e1ff, #e0f7ff);
+      background: linear-gradient(135deg, #f8e9ff, #e0f7ff);
       color: #333;
     }
-
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-
     .logo {
+      font-weight: 700;
       font-size: 1.5rem;
-      font-weight: 600;
-      color: #7b2cbf;
+      color: #7c3aed;
     }
-
     nav a {
       margin: 0 1rem;
       text-decoration: none;
@@ -34,102 +35,121 @@
       font-weight: 500;
       transition: color 0.3s;
     }
-
     nav a:hover {
-      color: #7b2cbf;
+      color: #7c3aed;
     }
-
     .hero {
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 4rem 2rem 2rem;
     }
-
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
       color: #222;
     }
-
     .hero p {
       font-size: 1.2rem;
       color: #555;
-      max-width: 500px;
-      margin: 0 auto 2rem auto;
+      max-width: 600px;
+      margin: 0 auto;
     }
-
     .options {
       display: flex;
       justify-content: center;
-      gap: 2rem;
       flex-wrap: wrap;
+      gap: 2rem;
+      margin: 3rem auto;
+      padding: 0 2rem;
     }
-
-    .option-card {
+    .card {
       background: white;
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-      width: 220px;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 250px;
     }
-
-    .option-card:hover {
-      transform: translateY(-5px);
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
-
-    .option-card span {
-      font-size: 2rem;
+    .card img {
+      width: 40px;
+      margin-bottom: 1rem;
     }
-
-    .option-card h3 {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
+    .card a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
     }
-
     footer {
       text-align: center;
       padding: 1rem;
-      background: #fff;
-      margin-top: 3rem;
+      background-color: #fff;
       font-size: 0.9rem;
-      color: #888;
+      color: #777;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .illustration {
+      background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+      opacity: 0.06;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .fade-in {
+      animation: fadeInUp 0.8s ease-out;
     }
   </style>
 </head>
 <body>
+  <div class="illustration"></div>
   <header>
     <div class="logo">ArtIT</div>
     <nav>
-      <a href="products.html">Buy</a>
-      <a href="upload.html">Sell</a>
-      <a href="contact.html">Contact</a>
+      <a href="#buy">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#contact">Contact</a>
       <a href="login.html">Login</a>
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero fade-in">
     <h1>Welcome to ArtIT</h1>
     <p>Empowering local artists to reach global markets with ease and creativity.</p>
+  </section>
 
-    <div class="options">
-      <div class="option-card">
-        <span>🎨</span>
-        <h3>Buy Artifacts</h3>
-      </div>
-      <div class="option-card">
-        <span>✏️</span>
-        <h3>Sell Your Artwork</h3>
-      </div>
-      <div class="option-card">
-        <span>📩</span>
-        <h3>Contact ArtIT</h3>
-      </div>
+  <section class="options fade-in">
+    <div class="card">
+      <img src="https://img.icons8.com/color/48/000000/paint-palette.png" alt="Buy">
+      <a href="products.html">🎨 Buy Artifacts</a>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/48/000000/paint-brush.png" alt="Sell">
+      <a href="upload.html">✏️ Sell Your Artwork</a>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/48/000000/contact-card.png" alt="Contact">
+      <a href="contact.html">📩 Contact ArtIT</a>
     </div>
   </section>
 
   <footer>
-    © 2025 ArtIT. All rights reserved.
+    &copy; 2025 ArtIT. All rights reserved.
   </footer>
 </body>
 </html>
