@@ -1,30 +1,35 @@
-// js/auth.js
-document.getElementById("loginForm")?.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const name = document.getElementById("name")?.value;
-  
-    if (name) {
-      // Register
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
-      localStorage.setItem("name", name);
-      alert("Registered successfully!");
-      window.location.href = "login.html";
-    } else {
-      // Login
-      const storedEmail = localStorage.getItem("email");
-      const storedPassword = localStorage.getItem("password");
-      const storedName = localStorage.getItem("name");
-  
-      if (email === storedEmail && password === storedPassword) {
-        alert("Login successful!");
-        localStorage.setItem("name", storedName);
-        window.location.href = "dashboard.html";
-      } else {
-        alert("Invalid credentials.");
-      }
-    }
-  });
-  
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+import { app } from "./firebase.js";
+
+const auth = getAuth(app);
+
+const registerBtn = document.getElementById("register-btn");
+const loginBtn = document.getElementById("login-btn");
+const message = document.getElementById("auth-message");
+
+registerBtn.addEventListener("click", () => {
+  const email = document.getElementById("register-email").value;
+  const password = document.getElementById("register-password").value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      message.textContent = "Registered successfully. You can now log in.";
+      message.style.color = "green";
+    })
+    .catch(error => {
+      message.textContent = error.message;
+    });
+});
+
+loginBtn.addEventListener("click", () => {
+  const email = document.getElementById("login-email").value;
+  const password = document.getElementById("login-password").value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      window.location.href = "dashboard.html"; // 👈 Change to your desired page
+    })
+    .catch(error => {
+      message.textContent = error.message;
+    });
+});
