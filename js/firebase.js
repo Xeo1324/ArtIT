@@ -1,16 +1,18 @@
-// js/firebase.js
-// This is a placeholder for Firebase config if needed in the future
-// Currently, all operations are simulated using localStorage
+// Import the functions you need from the SDKs
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics.js";
 
-// Example Firebase config (not active):
-// const firebaseConfig = {
-//   apiKey: "YOUR_API_KEY",
-//   authDomain: "YOUR_AUTH_DOMAIN",
-//   projectId: "YOUR_PROJECT_ID",
-//   storageBucket: "YOUR_STORAGE_BUCKET",
-//   messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-//   appId: "YOUR_APP_ID"
-// };
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDJwyvKT8dhqV5MweIu92LwCv_fwQVooEs",
+  authDomain: "artit-cfa5d.firebaseapp.com",
+  projectId: "artit-cfa5d",
+  storageBucket: "artit-cfa5d.appspot.com",
+  messagingSenderId: "945164324066",
+  appId: "1:945164324066:web:24f74260d69c9bb83922bb",
+  measurementId: "G-B8NW81J2JC"
+};
 
-// firebase.initializeApp(firebaseConfig);
-// const db = firebase.firestore();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
